@@ -38,6 +38,7 @@ const MainBody = ({ addToHistory, user }) => {
             size={30}
             onClick={handleAddDocument}
             style={{ cursor: 'pointer' }}
+            type='file'
           />
         </div>
       </div>
