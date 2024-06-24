@@ -198,3 +198,7 @@ input {
   margin-top: 2rem;
   padding: 10px;
 }
+
+.search-history{
+  background-color: #e0e0e0;
+}

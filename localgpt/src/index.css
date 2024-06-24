@@ -132,6 +132,7 @@ body {
   .main-title {
     display: flex;
     justify-content: space-between;
+    color: black;
   }
   
   .main-cards {

@@ -19,7 +19,7 @@ import {
   Legend,
   ResponsiveContainer
 } from 'recharts';
-import './App.css';
+import '../index.css';
 
 function Home() {
   const data = [
@@ -93,7 +93,7 @@ function Home() {
         </div>
       </div>
 
-      <div className='charts'>
+      {/* <div className='charts'>
         <ResponsiveContainer width="100%" height={400}>
           <BarChart
             width={500}
@@ -134,14 +134,14 @@ function Home() {
             <Legend />
           </PieChart>
         </ResponsiveContainer>
-      </div>
+      </div> */}
 
       <div className='flag-details'>
         <h3>Most Recent Open Flags</h3>
         <div className='flag-items-container'>
           {flagDetails.map((detail, index) => (
             <div key={index} className='flag-item'>
-              <div className='flag-icon'><img className='flag-icon' src='./src/img/llm.webp'></img></div>
+              <div className='flag-icon'><img className='flag-icon' src='../src/assets/img/llm.webp'></img></div>
               <div className='flag-content'>
                 <h4>{detail.flagName}</h4>
                 <p><strong>{detail.openedBy}</strong></p>

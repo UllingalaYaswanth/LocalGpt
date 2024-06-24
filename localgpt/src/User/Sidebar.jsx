@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import '../App.css';
 
 const Sidebar = ({ history, user }) => {
   const [showDropdown, setShowDropdown] = useState({});
@@ -33,7 +33,7 @@ const Sidebar = ({ history, user }) => {
   return (
     <div className="sidebar">
       <div className="user-details">
-        <img src="./src/img/llm.webp" className="user-image mb-2" alt="User" />
+        <img src="../src/assets/img/llm.webp" className="user-image mb-2" alt="User" />
         <div className="user-info">
           <p><strong>{user.name}</strong></p>
         </div>
