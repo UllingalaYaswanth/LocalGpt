@@ -145,6 +145,7 @@ body {
     justify-content: space-around;
     padding: 8px 15px;
     border-radius: 5px;
+    cursor: pointer;
   }
   
   .card:first-child {
@@ -167,10 +168,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: white;
   }
   
   .card-inner > .card_icon {
     font-size: 25px;
+  }
+
+  .card h1{
+    color: white;
   }
   
   .charts {
