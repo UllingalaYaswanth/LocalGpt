@@ -26,17 +26,17 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </Link>
         </li>
         <li className='sidebar-list-item'>
-          <Link to="/accounts">
+          <Link to="/AdminAcc">
             <BsFillGrid3X3GapFill className='icon' /> Accounts
           </Link>
         </li>
         <li className='sidebar-list-item'>
-          <Link to="/docs">
+          <Link to="/AdminDoc">
             <GrDocumentText className='icon' /> Docs
           </Link>
         </li>
         <li className='sidebar-list-item'>
-          <Link to="/groups">
+          <Link to="/AdminGroups">
             <MdGroups className='icon' /> Groups
           </Link>
         </li>

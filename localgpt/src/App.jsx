@@ -38,12 +38,15 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from 'antd';
-import AdminSidebar from './Admin/AdminSidebar'; // Ensure this is the correct path
-import Home from './Admin/AdminHome'; // Ensure this is the correct path
-import Datasource from './Admin/Datasource'; // Ensure this is the correct path
+import AdminSidebar from './Admin/AdminSidebar';
+import Home from './Admin/AdminHome'; 
+import Datasource from './Admin/Datasource'; 
 import './App.css';
-import DevSidebar from './Developer/DevSidebar'
-import DevHome from './Developer/DevHome'
+import AdminDoc from './Admin/AdminDoc';
+import AdminAcc from './Admin/AdminAcc';
+import AdminCreate from './Admin/AdminAccCreate';
+import AdminManage from './Admin/AdminAccManage';
+import AdminGroups from './Admin/AdminGroups'
 
 const { Sider, Content } = Layout;
 
@@ -54,6 +57,9 @@ function App() {
     setOpenSidebarToggle(!openSidebarToggle);
   };
 
+  const sidebarWidth = 250; 
+  const collapsedSidebarWidth = 80;
+
   return (
     <BrowserRouter>
       <Layout style={{ minHeight: '100vh' }}>
@@ -62,15 +68,22 @@ function App() {
           collapsed={openSidebarToggle}
           onCollapse={OpenSidebar}
           trigger={null}
+          width={sidebarWidth}
+          collapsedWidth={collapsedSidebarWidth}
           style={{ position: 'fixed', height: '100vh' }}
         >
           <AdminSidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
         </Sider>
-        <Layout style={{ marginLeft: openSidebarToggle ? 80 : 200 }}>
+        <Layout style={{ marginLeft: openSidebarToggle ? collapsedSidebarWidth : sidebarWidth }}>
           <Content style={{ padding: '0 24px', marginTop: 64 }}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/datasource" element={<Datasource />} />
+              <Route path='/AdminDoc' element={<AdminDoc/>} />
+              <Route path='/AdminAcc' element={<AdminAcc/>} />
+              <Route path='/AdminAccCreate' element={<AdminCreate/>} />
+              <Route path='/AdminAccManage' element={<AdminManage/>} />
+              <Route path='/AdminGroups' element={<AdminGroups/>} />
             </Routes>
           </Content>
         </Layout>

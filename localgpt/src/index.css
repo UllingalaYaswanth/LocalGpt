@@ -74,6 +74,8 @@ body {
     align-items: center;
     padding: 15px 30px 0px 30px;
     margin-bottom: 30px;
+    margin-top: 30px;
+    cursor: pointer;
   }
   
   .sidebar-title > span {
@@ -93,7 +95,7 @@ body {
   
   .sidebar-list-item {
     padding: 15px;
-    font-size: 18px;
+    font-size: 17px;
   }
   
   .sidebar-list-item:hover {
@@ -110,11 +112,6 @@ body {
   .sidebar-responsive {
     display: inline !important;
     position: absolute;
-    /*
-      we want the z-index of the sidebar higher so that
-      the charts are not showing over the sidebar 
-      on small screens
-    */
     z-index: 12 !important;
   }
   
@@ -295,4 +292,180 @@ body {
       display: none;
     }
   }
+
+  /* Admin Doc   */
+
+  .file-item {
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  .text{
+    color:black;
+    padding: 1rem;
+  }
+  .text1{
+    color:black;
+  }
+  .history-heading {
+    color: black;
+    position: relative;
+    top: 0rem;
+    left: 2rem;
+  }
   
+  .history-list {
+    margin-top: 1rem;
+  }
+  
+  .history-item {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  /* Admin Acc -------------------------*/
+  
+  .button-container button {
+    background-color:rgb(255, 255, 255);
+    color: black;
+    margin-bottom: 10px; 
+  }
+
+  /*end Admin Acc -------------------------*/
+
+
+  /* Admin Acc Create-------------------------*/
+  
+  .create-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    
+  }
+  
+  .create-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-container input,
+  .create-container select {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .create-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .create-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .create-container label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .create-container select {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .create-container {
+    height: 100%; 
+    width: 100%; 
+    padding: 10px; 
+
+  }
+  .search-button {
+    margin-left: 10px; 
+  }
+
+ /* End Admin Acc Create-------------------------*/
+
+/* Admin Acc Manage-------------------------*/
+
+.manage-container {
+  max-width: 800px;
+  /* margin: 0 auto; */
+  margin-top: 10%;
+  margin-left: 20%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #0056b3; */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-container .input-group {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.input-group .search-input{
+  padding: 20px;
+  height: 2rem;
+}
+
+.user-list {
+  width: 100%;
+}
+
+.user-button {
+  text-align: left;
+}
+
+.user-details-box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  margin-top: 10px;
+}
+
+.user-detail {
+  margin-bottom: 10px;
+}
+
+.search-history-box {
+  border: 1px solid #007bff;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #e9f7fe;
+  margin-top: 10px;
+}
+
+.user-name-box {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.user-name-box:hover {
+  background-color: #e2e6ea;
+}
+
+.user-name-box:active {
+  cursor: progress; /* Change cursor to progress when clicking */
+}
+
+
+/*End Admin Acc Manage-------------------------*/
