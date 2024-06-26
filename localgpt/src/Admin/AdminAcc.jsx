@@ -20,10 +20,10 @@ const AdminAcc = () => {
 
         {/* Button container row-wise */}
         <div className="button-container d-flex flex-row">
-          <Link to="/AdminAccCreate">
+          <Link to="/admin/AdminAccCreate">
             <button className="btn btn-primary me-3" onClick={handleCreate}>Create</button>
           </Link>
-          <Link to="/AdminAccManage">
+          <Link to="/admin/AdminAccManage">
           <button className="btn btn-secondary me-3" onClick={handleManage}>Manage</button>
           </Link>
         </div>

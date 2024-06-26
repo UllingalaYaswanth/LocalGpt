@@ -1,4 +1,4 @@
-// User Role---------------------------------------------
+// // User Role---------------------------------------------
 
 
 // import React, { useState } from 'react';
@@ -32,7 +32,7 @@
 
 
 
-// Admin Role-------------------------------------------------------------------------------
+// // Admin Role-------------------------------------------------------------------------------
 
 
 // import React, { useState } from 'react';
@@ -49,17 +49,13 @@
 // import AdminGroups from './Admin/AdminGroups'
 
 // const { Sider, Content } = Layout;
-
 // function App() {
 //   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
-
 //   const OpenSidebar = () => {
 //     setOpenSidebarToggle(!openSidebarToggle);
 //   };
-
 //   const sidebarWidth = 250; 
 //   const collapsedSidebarWidth = 80;
-
 //   return (
 //     <BrowserRouter>
 //       <Layout style={{ minHeight: '100vh' }}>
@@ -91,55 +87,81 @@
 //     </BrowserRouter>
 //   );
 // }
+// export default App;
+
+
+// //  Developer Role -------------------------------------------------------------------------------
+
+// import React, { useState } from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { Layout } from 'antd';
+// import './App.css';
+// import Home from './Developer/DevHome'
+// import Sidebar from './Developer/DevSidebar';
+
+// const { Sider, Content } = Layout;
+
+// function App() {
+//   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+
+//   const OpenSidebar = () => {
+//     setOpenSidebarToggle(!openSidebarToggle);
+//   };
+
+//   const sidebarWidth = 250; 
+//   const collapsedSidebarWidth = 80;
+
+//   return (
+//     <BrowserRouter>
+//       <Layout style={{ minHeight: '100vh' }}>
+//         <Sider
+//           collapsible
+//           collapsed={openSidebarToggle}
+//           onCollapse={OpenSidebar}
+//           trigger={null}
+//           width={sidebarWidth}
+//           collapsedWidth={collapsedSidebarWidth}
+//           style={{ position: 'fixed', height: '100vh' }}
+//         >
+//           <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
+//         </Sider>
+//         <Layout style={{ marginLeft: openSidebarToggle ? collapsedSidebarWidth : sidebarWidth }}>
+//           <Content style={{ padding: '0 24px', marginTop: 64 }}>
+//             <Routes>
+//               <Route path="/" element={<Home />} />
+//             </Routes>
+//           </Content>
+//         </Layout>
+//       </Layout>
+//     </BrowserRouter>
+//   );
+// }
 
 // export default App;
 
 
-//  Developer Role -------------------------------------------------------------------------------
 
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Layout } from 'antd';
-import './App.css';
-import Home from './Developer/DevHome'
-import Sidebar from './Developer/DevSidebar';
 
-const { Sider, Content } = Layout;
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './Login';
+import UserApp from './UserApp';
+import AdminApp from './AdminApp';
+import DeveloperApp from './DeveloperApp';
 
 function App() {
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
-
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle);
-  };
-
-  const sidebarWidth = 250; 
-  const collapsedSidebarWidth = 80;
-
   return (
-    <BrowserRouter>
-      <Layout style={{ minHeight: '100vh' }}>
-        <Sider
-          collapsible
-          collapsed={openSidebarToggle}
-          onCollapse={OpenSidebar}
-          trigger={null}
-          width={sidebarWidth}
-          collapsedWidth={collapsedSidebarWidth}
-          style={{ position: 'fixed', height: '100vh' }}
-        >
-          <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
-        </Sider>
-        <Layout style={{ marginLeft: openSidebarToggle ? collapsedSidebarWidth : sidebarWidth }}>
-          <Content style={{ padding: '0 24px', marginTop: 64 }}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-            </Routes>
-          </Content>
-        </Layout>
-      </Layout>
-    </BrowserRouter>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/user/*" element={<UserApp />} />
+        <Route path="/admin/*" element={<AdminApp />} />
+        <Route path="/developer/*" element={<DeveloperApp />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
+

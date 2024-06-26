@@ -21,7 +21,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
 
       <ul className='sidebar-list'>
         <li className='sidebar-list-item'>
-          <Link to="/">
+          <Link to="/developer/">
             <BsGrid1X2Fill className='icon' />Console
           </Link>
         </li>

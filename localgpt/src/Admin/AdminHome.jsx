@@ -143,7 +143,7 @@ function Home() {
             <div key={index} className='flag-item'>
               <div className='flag-icon'><img className='flag-icon' src='../src/assets/img/llm.webp'></img></div>
               <div className='flag-content'>
-                <h4>{detail.flagName}</h4>
+                {/* <h4>{detail.flagName}</h4> */}
                 <p><strong>{detail.openedBy}</strong></p>
                 <p>{detail.contentViewed}</p>
               </div>
