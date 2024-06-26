@@ -8,8 +8,9 @@ import {
 import { GrDocumentText } from "react-icons/gr";
 import { MdGroups } from "react-icons/md";
 import { IoCloudUploadSharp } from "react-icons/io5";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-function Sidebar({ openSidebarToggle, OpenSidebar }) {
+function Sidebar({ openSidebarToggle, OpenSidebar, handleLogout }) {
   return (
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive" : ""}>
       <div className='sidebar-title'>
@@ -19,27 +20,31 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
         <span className='icon close_icon bg-primary' onClick={OpenSidebar}>X</span>
       </div>
 
-      <ul className='sidebar-list'>
-        <li className='sidebar-list-item'>
-          <Link to="/developer/">
-            <BsGrid1X2Fill className='icon' />Console
-          </Link>
-        </li>
-        <li className='sidebar-list-item'>
-          <Link to="/developer/DevUpload">
-            <IoCloudUploadSharp className='icon' /> Upload
-          </Link>
-        </li>
-        <li className='sidebar-list-item'>
-          <Link to="/developer/DevManage">
-            <GrDocumentText className='icon' /> Manage
-          </Link>
-        </li>
-        <li className='sidebar-list-item'>
-          <Link to="/developer/">
-            <MdGroups className='icon' /> Train
-          </Link>
-        </li>
+      <ul className='sidebar-list ms-2'>
+        <Link to="/developer/" className='text-decoration-none text-black'> 
+          <li className='sidebar-list-item'>
+            <BsGrid1X2Fill className='icon' />
+            <span>Console</span>
+          </li>
+        </Link>
+        <Link to="/developer/DevUpload" className='text-decoration-none text-black'>
+          <li className='sidebar-list-item'>
+            <IoCloudUploadSharp className='icon' />
+            <span>Upload</span>
+          </li>
+        </Link>
+        <Link to="/developer/DevManage" className='text-decoration-none text-black'>
+          <li className='sidebar-list-item'>
+            <GrDocumentText className='icon' />
+            <span>Manage</span>
+          </li>
+        </Link>
+        <Link to="/developer/" className='text-decoration-none text-black'> 
+          <li className='sidebar-list-item'>
+            <MdGroups className='icon' />
+            <span>Train</span>
+          </li>
+        </Link>
       </ul>
     </aside>
   );

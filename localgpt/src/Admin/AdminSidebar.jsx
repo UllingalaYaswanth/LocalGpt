@@ -75,31 +75,36 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
       </div>
 
       <ul className='sidebar-list'>
-        <li className='sidebar-list-item'>
-          <Link to="/admin/">
+          <Link to="/admin/" className='text-decoration-none text-black'>
+          <li className='sidebar-list-item'>
             <BsGrid1X2Fill className='icon' /> Dashboard
+          </li>
           </Link>
-        </li>
-        <li className='sidebar-list-item'>
-          <Link to="/admin/AdminAcc">
+          
+          <Link to="/admin/AdminAcc" className='text-decoration-none text-black'>
+          <li className='sidebar-list-item'>
             <BsFillGrid3X3GapFill className='icon' /> Accounts
+            </li>
           </Link>
-        </li>
-        <li className='sidebar-list-item'>
-          <Link to="/admin/AdminDoc">
+        
+          <Link to="/admin/AdminDoc" className='text-decoration-none text-black'>
+          <li className='sidebar-list-item'>
             <GrDocumentText className='icon' /> Docs
+            </li>
           </Link>
-        </li>
-        <li className='sidebar-list-item'>
-          <Link to="/admin/AdminGroups">
+  
+          <Link to="/admin/AdminGroups" className='text-decoration-none text-black'>
+          <li className='sidebar-list-item'>
             <MdGroups className='icon' /> Groups
+            </li>
           </Link>
-        </li>
-        <li className='sidebar-list-item'>
-          <Link to="/admin/datasource">
+
+          <Link to="/admin/datasource" className='text-decoration-none text-black'>
+          <li className='sidebar-list-item'>
             <IoIosLink className='icon' /> Data Sources
+            </li>
           </Link>
-        </li>
+
       </ul>
     </aside>
   );
