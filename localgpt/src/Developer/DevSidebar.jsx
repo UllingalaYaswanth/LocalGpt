@@ -26,17 +26,17 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </Link>
         </li>
         <li className='sidebar-list-item'>
-          <Link to="/accounts">
+          <Link to="/developer/DevUpload">
             <IoCloudUploadSharp className='icon' /> Upload
           </Link>
         </li>
         <li className='sidebar-list-item'>
-          <Link to="/docs">
+          <Link to="/developer/DevManage">
             <GrDocumentText className='icon' /> Manage
           </Link>
         </li>
         <li className='sidebar-list-item'>
-          <Link to="/datasource">
+          <Link to="/developer/">
             <MdGroups className='icon' /> Train
           </Link>
         </li>

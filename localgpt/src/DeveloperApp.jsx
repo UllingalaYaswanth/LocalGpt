@@ -3,6 +3,8 @@ import { Layout } from 'antd';
 import { Routes, Route } from 'react-router-dom';
 import Sidebar from './Developer/DevSidebar';
 import Home from './Developer/DevHome';
+import DevManage from './Developer/DevManage';
+import DevUpload from './Developer/DevUpload';
 import './App.css';
 
 const { Sider, Content } = Layout;
@@ -32,6 +34,8 @@ const DeveloperApp = () => {
         <Content style={{ padding: '0 24px', marginTop: 64 }}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="DevManage" element={<DevManage/>} />
+            <Route path="DevUpload" element={<DevUpload/>} />
           </Routes>
         </Content>
       </Layout>
