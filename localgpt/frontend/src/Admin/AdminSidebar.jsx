@@ -53,6 +53,67 @@
 // export default Sidebar;
 
 
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// import {
+//   BsGrid1X2Fill,
+//   BsFillGrid3X3GapFill,
+//   BsListCheck
+// } from 'react-icons/bs';
+// import { GrDocumentText } from "react-icons/gr";
+// import { MdGroups } from "react-icons/md";
+// import { IoIosLink } from "react-icons/io";
+
+// function Sidebar({ openSidebarToggle, OpenSidebar }) {
+//   return (
+//     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive" : ""}>
+//       <div className='sidebar-title'>
+//         <div className='sidebar-brand'>
+//           <img src='../src/assets/img/llm.webp' className='icon_header' alt="Logo" /> Govind
+//         </div>
+//         <span className='icon close_icon bg-primary' onClick={OpenSidebar}>X</span>
+//       </div>
+
+//       <ul className='sidebar-list'>
+//           <Link to="/admin/" className='text-decoration-none text-black'>
+//           <li className='sidebar-list-item'>
+//             <BsGrid1X2Fill className='icon' /> Dashboard
+//           </li>
+//           </Link>
+          
+//           <Link to="/admin/AdminAcc" className='text-decoration-none text-black'>
+//           <li className='sidebar-list-item'>
+//             <BsFillGrid3X3GapFill className='icon' /> Accounts
+//             </li>
+//           </Link>
+        
+//           <Link to="/admin/AdminDoc" className='text-decoration-none text-black'>
+//           <li className='sidebar-list-item'>
+//             <GrDocumentText className='icon' /> Docs
+//             </li>
+//           </Link>
+  
+//           <Link to="/admin/AdminGroups" className='text-decoration-none text-black'>
+//           <li className='sidebar-list-item'>
+//             <MdGroups className='icon' /> Groups
+//             </li>
+//           </Link>
+
+//           <Link to="/admin/datasource" className='text-decoration-none text-black'>
+//           <li className='sidebar-list-item'>
+//             <IoIosLink className='icon' /> Data Sources
+//             </li>
+//           </Link>
+
+//       </ul>
+//     </aside>
+//   );
+// }
+
+// export default Sidebar;
+
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -63,6 +124,7 @@ import {
 import { GrDocumentText } from "react-icons/gr";
 import { MdGroups } from "react-icons/md";
 import { IoIosLink } from "react-icons/io";
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 function Sidebar({ openSidebarToggle, OpenSidebar }) {
   return (
@@ -71,40 +133,41 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
         <div className='sidebar-brand'>
           <img src='../src/assets/img/llm.webp' className='icon_header' alt="Logo" /> Govind
         </div>
-        <span className='icon close_icon bg-primary' onClick={OpenSidebar}>X</span>
+        <span className='icon close_icon bg-primary' onClick={OpenSidebar} style={{ cursor: 'pointer' }}>
+          {openSidebarToggle ? <FaChevronRight /> : <FaChevronLeft />}
+        </span>
       </div>
 
       <ul className='sidebar-list'>
-          <Link to="/admin/" className='text-decoration-none text-black'>
+        <Link to="/admin/" className='text-decoration-none text-black'>
           <li className='sidebar-list-item'>
             <BsGrid1X2Fill className='icon' /> Dashboard
           </li>
-          </Link>
-          
-          <Link to="/admin/AdminAcc" className='text-decoration-none text-black'>
+        </Link>
+        
+        <Link to="/admin/AdminAcc" className='text-decoration-none text-black'>
           <li className='sidebar-list-item'>
             <BsFillGrid3X3GapFill className='icon' /> Accounts
-            </li>
-          </Link>
+          </li>
+        </Link>
         
-          <Link to="/admin/AdminDoc" className='text-decoration-none text-black'>
+        <Link to="/admin/AdminDoc" className='text-decoration-none text-black'>
           <li className='sidebar-list-item'>
             <GrDocumentText className='icon' /> Docs
-            </li>
-          </Link>
-  
-          <Link to="/admin/AdminGroups" className='text-decoration-none text-black'>
+          </li>
+        </Link>
+        
+        <Link to="/admin/AdminGroups" className='text-decoration-none text-black'>
           <li className='sidebar-list-item'>
             <MdGroups className='icon' /> Groups
-            </li>
-          </Link>
+          </li>
+        </Link>
 
-          <Link to="/admin/datasource" className='text-decoration-none text-black'>
+        <Link to="/admin/datasource" className='text-decoration-none text-black'>
           <li className='sidebar-list-item'>
             <IoIosLink className='icon' /> Data Sources
-            </li>
-          </Link>
-
+          </li>
+        </Link>
       </ul>
     </aside>
   );

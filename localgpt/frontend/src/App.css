@@ -24,7 +24,7 @@ background-color:#222;
   }
 
   /* side bar---------------- */
-  .sidebar {
+  /* .sidebar {
     width: 250px;
     height: 100vh;
     background: #f0f0f0;
@@ -36,7 +36,7 @@ background-color:#222;
   }
   
   .sidebar .btn {
-    width: calc(100% - 40px); /* Adjust width */
+    width: calc(100% - 40px); 
     padding: 10px;
     margin-top: 15rem;
     margin-bottom: 20px;
@@ -71,7 +71,6 @@ background-color:#222;
     padding: 3px;
     margin-bottom: 2px;
     cursor: pointer;
-    /* background-color: #ffffff; */
     border-radius: 7px;
     transition: background-color 0.3s ease;
   }
@@ -154,7 +153,7 @@ background-color:#222;
     border-radius: 10px;
     width: 100px;
     padding: 5px;
-  }
+  } */
   
 /* side bar end----------------------- */
 
@@ -165,20 +164,20 @@ background-color:#222;
   align-items: center;
   padding: 20px;
   background-color: #fffefe;
-  margin-top: 10rem; /* Adjusted margin for top spacing */
+  margin-top: 4rem; /* Adjusted margin for top spacing */
 }
 
 .main-body .search {
   width: calc(100% - 70px); /* Adjusted width to leave space for the icon */
-  padding: 30px; 
+  padding: 10px; 
   font-size: 16px;
   border-radius: 10px;
   box-sizing: border-box;
-  margin-top: 2rem; 
+  align-items: center; 
   border: 2px solid #ccc; 
 }
 
-input {
+/* input {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -191,14 +190,341 @@ input {
   font-size: 50px;
   margin-top: 20px;
 }
-.append{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
+.input-group1 {
+  position: relative;
+}
+
+.search {
+  flex: 1;
   padding: 10px;
 }
 
-.search-history{
-  background-color: #e0e0e0;
+.append {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.history {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.history h2 {
+  margin-bottom: 10px;
+}
+
+.history ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.history li {
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+} */
+
+@media (max-width: 1000px) {
+  .ant-layout-sider {
+    display: none;
+  }
+
+  .ant-layout {
+    margin-left: 0 !important;
+  }
+}
+
+
+
+/* .messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+}
+
+.message {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 60%;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: #ffffff;
+}
+
+.input-box {
+  display: flex;
+  padding: 10px;
+  background-color: #ffffff;
+  border-top: 1px solid #ccc;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-box button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-box button:hover {
+  background-color: #0056b3;
+} */
+
+/* new chatgpt imp */
+/* .main-body {
+  padding: 20px;
+}
+
+.welcome {
+  font-size: 2rem;
+}
+
+.chat-window {
+  height: 400px;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 60%;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+  text-align: right;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: #ffffff;
+}
+
+.input-group1 {
+  display: flex;
+}
+
+.search {
+  flex: 1;
+  padding: 10px;
+}
+
+.append {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+} */
+
+
+.App {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  height: 100vh;
+  border-right: 1px solid #ccc;
+  background-color: #f8f9fa;
+  
+}
+
+
+.user-details {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.user-info {
+  margin-top: 10px;
+}
+.history{
+  margin-top: 120%;
+}
+.history h2{
+  margin-top: 10%;
+}
+
+ul.history-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+  overflow-y: auto; 
+  flex-grow: 1; 
+  height: 500px;
+}
+.history-item {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 1px;
+  cursor: pointer;
+  
+}
+
+.history-item:hover{
+  background-color: #e1e2e2;
+}
+
+.three-dots {
+  cursor: pointer;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown p {
+  margin: 0;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dropdown p:hover {
+  background-color: #f1f1f1;
+}
+
+.main-body {
+  flex: 1;
+  padding: 20px;
+}
+
+.welcome {
+  font-size: 2rem;
+}
+
+.chat-window {
+  height: 650px;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 60%;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+  text-align: right;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: #ffffff;
+}
+
+.input-group1 {
+  display: flex;
+  margin-top: 5%;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  flex: 1;
+  padding: 10px;
+  margin-left: 45px;
+}
+
+.append {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  justify-content: start;
+}
+
+
+/* Side bar code------------------------------------------*/
+
+
+#sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  transition: width 0.2s;
+}
+
+.sidebar-responsive {
+  width: 80px;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.icon {
+  font-size: 1.5em;
+}
+
+.sidebar-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-list-item {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-list-item .icon {
+  margin-right: 10px;
 }
