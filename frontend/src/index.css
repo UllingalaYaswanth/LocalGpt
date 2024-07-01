@@ -1,0 +1,478 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #9e9ea4;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .icon {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 20px;
+  }
+  .icon_header {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 26px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
+  .icon, .icon_header {
+    margin-right: 5px;
+      
+  }
+  
+  .close_icon {
+    color: red;
+    margin-left: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'sidebar header header header'
+      'sidebar main main main';
+    height: 100vh;
+  }
+  
+  /* Header  */
+  .header {
+    grid-area: header;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  /* End Header  */
+  
+  /* Sidebar  */
+  #sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    background-color: #f0f0f0;;
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    color: #525252;
+  }
+  
+  .sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px 0px 30px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  
+  .sidebar-title > span {
+    display: none;
+  }
+  
+  .sidebar-brand {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .sidebar-list {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .sidebar-list-item {
+    padding: 15px;
+    font-size: 17px;
+  }
+  
+  .sidebar-list-item:hover {
+    background-color: rgba(24, 22, 22, 0.2);  
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .sidebar-list-item > a {
+    text-decoration: none;
+    color: #525252;
+  }
+  
+  .sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+    z-index: 12 !important;
+  }
+  
+  /* End Sidebar  */
+  
+  
+  /* Main  */  
+  .main-container {
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .main-title {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+  }
+  
+  .main-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 15px 0;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .card:first-child {
+    background-color: #2962ff;
+  }
+  
+  .card:nth-child(2) {
+    background-color: #ff6d00;
+  }
+  
+  .card:nth-child(3) {
+    background-color: #2e7d32;
+  }
+  
+  .card:nth-child(4) {
+    background-color: #d50000;
+  }
+  
+  .card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+  }
+  
+  .card-inner > .card_icon {
+    font-size: 25px;
+  }
+
+  .card h1{
+    color: white;
+  }
+  
+  .charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 60px;
+    height: 300px;
+  }
+  .flag-details {
+    margin-top: 15rem;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+  }
+  
+  .flag-details h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  .flag-items-container {
+    max-height: 400px; /* Set the max height for the scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  .flag-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .flag-item:last-child {
+    border-bottom: none;
+  }
+  
+  .flag-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    margin-right: 10px;
+  }
+  
+  .flag-content {
+    flex-grow: 1;
+    
+  }
+  
+  .flag-content h4 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .flag-content p {
+    margin: 0;
+    color: #888;  
+  }
+  
+  .flag-time {
+    white-space: nowrap;
+    color: #888;
+  }
+  
+  
+  
+  
+  /* End Main  */
+  
+  
+  /* Medium <= 992px */
+    
+  @media screen and (max-width: 992px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr 3fr;
+      grid-template-areas:
+        'header'
+        'main';
+    }
+  
+    #sidebar {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: inline;
+    }
+  
+    .sidebar-title > span {
+      display: inline;
+    }
+  }
+  /* Small <= 768px */
+    
+  @media screen and (max-width: 768px) {
+    .main-cards {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+  
+    .charts {
+      grid-template-columns: 1fr;
+      margin-top: 30px;
+    }
+  }
+  
+  /* Extra Small <= 576px */
+  
+  @media screen and (max-width: 576px) {
+    .hedaer-left {
+      display: none;
+    }
+  }
+
+  /* Admin Doc   */
+
+  .file-item {
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  .text{
+    color:black;
+    padding: 1rem;
+  }
+  .text1{
+    color:black;
+  }
+  .history-heading {
+    color: black;
+    position: relative;
+    top: 0rem;
+    left: 2rem;
+  }
+  
+  .history-list {
+    margin-top: 1rem;
+  }
+  
+  .history-item {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  /* Admin Acc -------------------------*/
+  
+  .button-container button {
+    background-color:rgb(255, 255, 255);
+    color: black;
+    margin-bottom: 10px; 
+  }
+
+  /*end Admin Acc -------------------------*/
+
+
+  /* Admin Acc Create-------------------------*/
+  
+  .create-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    
+  }
+  
+  .create-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-container input,
+  .create-container select {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .create-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .create-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .create-container label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .create-container select {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .create-container {
+    height: 100%; 
+    width: 100%; 
+    padding: 10px; 
+
+  }
+  .search-button {
+    margin-left: 10px; 
+  }
+
+ /* End Admin Acc Create-------------------------*/
+
+/* Admin Acc Manage-------------------------*/
+
+.manage-container {
+  max-width: 800px;
+  /* margin: 0 auto; */
+  margin-top: 10%;
+  margin-left: 20%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #0056b3; */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-container .input-group {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.input-group .search-input{
+  padding: 20px;
+  height: 2rem;
+}
+
+.user-list {
+  width: 100%;
+}
+
+.user-button {
+  text-align: left;
+}
+
+.user-details-box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  margin-top: 10px;
+}
+
+.user-detail {
+  margin-bottom: 10px;
+}
+
+.search-history-box {
+  border: 1px solid #007bff;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #e9f7fe;
+  margin-top: 10px;
+}
+
+.user-name-box {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.user-name-box:hover {
+  background-color: #e2e6ea;
+}
+
+.user-name-box:active {
+  cursor: progress; /* Change cursor to progress when clicking */
+}
+
+
+/*End Admin Acc Manage-------------------------*/
+
+
+/* dev sidebar........................... */
+
