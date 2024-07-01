@@ -6,7 +6,8 @@ import Home from './Admin/AdminHome';
 import Datasource from './Admin/Datasource';
 import AdminDoc from './Admin/AdminDoc';
 import AdminAcc from './Admin/AdminAcc';
-
+import AdminCreate from './Admin/AdminAccCreate';
+import AdminManage from './Admin/AdminAccManage';
 import AdminGroups from './Admin/AdminGroups';
 import './App.css';
 
@@ -40,7 +41,8 @@ const AdminApp = () => {
             <Route path="datasource" element={<Datasource />} />
             <Route path="AdminDoc" element={<AdminDoc />} />
             <Route path="AdminAcc" element={<AdminAcc />} />
-
+            <Route path="AdminAccCreate" element={<AdminCreate />} />
+            <Route path="AdminAccManage" element={<AdminManage />} />
             <Route path="AdminGroups" element={<AdminGroups />} />
           </Routes>
         </Content>
