@@ -175,7 +175,7 @@ body {
     font-size: 25px;
   }
 
-  .card h1{
+  .card{
     color: white;
   }
   
@@ -187,7 +187,7 @@ body {
     height: 300px;
   }
   .flag-details {
-    margin-top: 15rem;
+    margin-top: 10rem;
     width: 100%;
     max-width: 100%;
     margin-left: auto;
@@ -202,7 +202,7 @@ body {
   }
   
   .flag-items-container {
-    max-height: 400px; /* Set the max height for the scrollable area */
+    max-height: 500px; /* Set the max height for the scrollable area */
     overflow-y: auto; /* Enable vertical scrolling */
   }
   

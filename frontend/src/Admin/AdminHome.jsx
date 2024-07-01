@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BsFillArchiveFill,
   BsFillGrid3X3GapFill,
@@ -22,6 +22,31 @@ import {
 import '../index.css';
 
 function Home() {
+  const [accountCount, setAccountCount] = useState(0);
+  const [groupCount, setGroupCount] = useState(0);
+
+  useEffect(() => {
+    fetch('http://localhost:8081/account-count')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => setAccountCount(data.count))
+      .catch(error => console.error('Error fetching account count:', error));
+    
+    fetch('http://localhost:8081/group-count')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => setGroupCount(data.count))
+      .catch(error => console.error('Error fetching group count:', error));
+  }, []);
+
   const data = [
     { name: 'Jan', uv: 4000, pv: 180, amt: 2400 },
     { name: 'Feb', uv: 3000, pv: 70, amt: 2210 },
@@ -57,93 +82,49 @@ function Home() {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
   return (
-    <main className='main-container'>
+    <main className='main-container' style={{ fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif', fontWeight: 800 }}>
       <div className='main-title'>
-        <h3>DASHBOARD</h3>
+        DASHBOARD
       </div>
 
       <div className='main-cards'>
         <div className='card'>
           <div className='card-inner'>
-            <h3>Total Accounts</h3>
+            Accounts
             <BsFillArchiveFill className='card_icon' />
           </div>
-          <h1>300</h1>
+          {accountCount}
         </div>
         <div className='card'>
           <div className='card-inner'>
-            <h3>Total Groups</h3>
+            Groups
             <MdGroups className='card_icon' />
           </div>
-          <h1>12</h1>
+          {groupCount}
         </div>
         <div className='card'>
           <div className='card-inner'>
-            <h3>Total Docs</h3>
+            Docs
             <GrDocumentText className='card_icon' />
           </div>
-          <h1>33</h1>
+          33
         </div>
         <div className='card'>
           <div className='card-inner'>
-            <h3>Total Flags</h3>
+           Flags
             <BsFillBellFill className='card_icon' />
           </div>
-          <h1>42</h1>
+          42
         </div>
       </div>
-
-      {/* <div className='charts'>
-        <ResponsiveContainer width="100%" height={400}>
-          <BarChart
-            width={500}
-            height={300}
-            data={data}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="pv" fill="#8884d8" />
-          </BarChart>
-        </ResponsiveContainer>
-
-        <ResponsiveContainer width="100%" height={400}>
-          <PieChart>
-            <Pie
-              data={pieData1}
-              dataKey="value"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={100}
-              label
-            >
-              {pieData1.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-            <Tooltip />
-            <Legend />
-          </PieChart>
-        </ResponsiveContainer>
-      </div> */}
 
       <div className='flag-details'>
         <h3>Most Recent Open Flags</h3>
         <div className='flag-items-container'>
           {flagDetails.map((detail, index) => (
             <div key={index} className='flag-item'>
-              <div className='flag-icon'><img className='flag-icon' src='../src/assets/img/llm.webp'></img></div>
+              <div className='flag-icon'><img className='flag-icon' src='../src/assets/img/llm.webp' alt='Flag icon'/></div>
               <div className='flag-content'>
-                {/* <h4>{detail.flagName}</h4> */}
                 <p><strong>{detail.openedBy}</strong></p>
                 <p>{detail.contentViewed}</p>
               </div>

@@ -1,46 +1,79 @@
 import React, { useState } from 'react';
+import { FaTimes } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../App.css';
 
-const DevUpload = () => {
-  const [file, setFile] = useState(null);
-  const [fileName, setFileName] = useState('');
+const DevUpload = ({ onFileUpload }) => {
+  const [files, setFiles] = useState([]);
   const [tags, setTags] = useState('');
   const [level, setLevel] = useState('');
-  const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [uploadSuccess, setUploadSuccess] = useState(false); // State for upload success notification
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-    setFileName(e.target.files[0].name);
+    const selectedFiles = e.target.files;
+    const filesArray = Array.from(selectedFiles);
+    setFiles(filesArray);
   };
 
-  const handleSubmit = (e) => {
+  const handleRemoveFile = (fileName) => {
+    const filteredFiles = files.filter(file => file.name !== fileName);
+    setFiles(filteredFiles);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newFile = {
-      file,
-      fileName,
-      tags: tags.split(',').map(tag => tag.trim()),
-      level
-    };
-    setUploadedFiles([...uploadedFiles, newFile]);
-    // Reset form
-    setFile(null);
-    setFileName('');
+    
+    const formDataArray = files.map(file => {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('fileName', file.name);
+      formData.append('tags', tags);
+      formData.append('level', level);
+      return formData;
+    });
+
+    onFileUpload(formDataArray);
+
+    setFiles([]);
     setTags('');
     setLevel('');
+    setUploadSuccess(true); // Set upload success state to true
+
+    setTimeout(() => {
+      setUploadSuccess(false); // Reset upload success state after 3 seconds
+    }, 3000);
   };
 
   return (
-    <div className="body d-flex flex-column align-items-start ms-5 justify-content-center">
+    
+    <div className="body d-flex flex-column align-items-center justify-content-center">
       <form onSubmit={handleSubmit} className="w-50">
+        {uploadSuccess && ( // Conditional rendering for upload success message
+          <div className="alert alert-success mt-3" role="alert">
+            Files uploaded successfully!
+          </div>
+        )}
         <div className="mb-3">
-          <label htmlFor="file" className="form-label">Upload Document</label>
-          <input type="file" className="form-control" id="file" onChange={handleFileChange} required />
+          <label htmlFor="file" className="form-label">Upload Documents</label>
+          <input type="file" className="form-control" id="file" onChange={handleFileChange} multiple required />
         </div>
-        <div className="mb-3">
-          <label htmlFor="fileName" className="form-label">Rename Document (optional)</label>
-          <input type="text" className="form-control" id="fileName" value={fileName} onChange={(e) => setFileName(e.target.value)} />
-        </div>
+      
+        {files.length > 0 && (
+          <div className="mb-3">
+            <h5>Selected Files:</h5>
+            <ul className="list-group">
+              {files.map((file, index) => (
+                <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
+                  {file.name}
+                  <button type="button" className="btn btn-danger btn-sm" onClick={() => handleRemoveFile(file.name)}>
+                    <FaTimes />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <div className="mb-3">
           <label htmlFor="tags" className="form-label">Tags</label>
           <input type="text" className="form-control" id="tags" value={tags} onChange={(e) => setTags(e.target.value)} />
@@ -49,25 +82,13 @@ const DevUpload = () => {
           <label htmlFor="level" className="form-label">Level</label>
           <select className="form-select" id="level" value={level} onChange={(e) => setLevel(e.target.value)} required>
             <option value="">Select level</option>
-            <option value="Beginner">Beginner</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Advanced">Advanced</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
           </select>
         </div>
         <button type="submit" className="btn btn-primary">Upload</button>
       </form>
-
-      <div className="mt-5 w-50">
-        <ul className="list-group">
-          {uploadedFiles.map((file, index) => (
-            <li key={index} className="list-group-item">
-              <h5>{file.fileName}</h5>
-              <p>Tags: {file.tags.join(', ')}</p>
-              <p>Level: {file.level}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 };
